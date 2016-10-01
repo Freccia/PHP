@@ -1,0 +1,66 @@
+body {
+	background-color: rgb(80, 80, 80);
+}
+
+/*			HEADER			*/
+#header {
+	height: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0.9%;
+	border-radius: 8px;
+	box-shadow: 12px 12px 15px black;
+	background-color: rgb(144, 144, 144);
+}
+
+#logo {
+	width: 30%;
+	height: 30%;
+	border-radius: 8px;
+}
+
+/*			LEFT				*/
+#left {
+	width: 7%;
+	float: left;
+	text-align: center;
+	border-radius: 10px;
+	background-color: rgb(144, 144, 144);
+	box-shadow: 12px 12px 15px black;
+}
+
+/*			RIGHT				*/
+#right {
+	width: 7%;
+	float: right;
+	text-align: center;
+	border-radius: 10px;
+	background-color: rgb(144, 144, 144);
+	box-shadow: 12px 12px 15px black;
+}
+
+#brick {
+	width: 5vw;
+	height: 3vw;
+	background-image: url("resources/brick.jpg");
+	background-repeat: repeat-y;
+}
+
+/*			CENTER				*/
+#center {
+	width: 54vw;
+	height: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	background-repeat: no-repeat;
+	background-size: 53vw 29vw;
+	background-position: center center;
+	background-image: url("resources/cluster.jpg");
+	background-color: rgb(144, 144, 144);
+	box-shadow: 12px 12px 15px black;
+	border-radius: 10px;
+}
+
+
+
+

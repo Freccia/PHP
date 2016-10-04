@@ -10,65 +10,16 @@ function is_alpha($c)
 
 }
 
-function set_values(&$a)
-{
-	$len = count($a);
-	$i = -1;
-	while (++$i < $len)
-	{
-		if (is_alpha($a[$i]))
-		{
-			echo $a[$i]." is Alpha -> ".(ord($a[$i]) + 2000)."\n";
-			$a[$i] = ord($a[$i]) + 2000;
-		}
-		else if (is_numeric($a[$i]))
-		{
-			echo $a[$i]." is Numeric -> ".(ord($a[$i]) + 1500)."\n";
-			$a[$i] = ord($a[$i]) + 1500;
-		}
-		else
-		{
-			echo $a[$i]." is Other -> ".(ord($a[$i]) + 1000)."\n";
-			$a[$i] = ord($a[$i]) + 1000;
-		}
-	}
-	echo "\n";
-	return $a;
-}
-
 function my_sort($s1, $s2)
 {
-	echo "S1 :: ".$s1."\n";
-	echo "S2 :: ".$s2."\n";
-	$s1	= strtolower($s1);
+	$s1 = strtolower($s1);
 	$s2 = strtolower($s2);
 	$s1 = str_split($s1);
 	$s2 = str_split($s2);
-	set_values($s1);
-	set_values($s2);
-
-//	print_r($s1);
-//	print_r($s2);
-
-	if ($s1 == $s2)
-	{
-		echo "Return 0\n\n";
-		return 0;
-	}
-	$i = count($s1);	
-	$j = count($s2);
-	$k = 0;
-	while ($k < $i && $k < $j)
-	{
-		if ($s1[$k] > $s2[$k])
-		{
-			echo $s1[$k]." > ".$s2[$k]." return -1\n\n";
-			return -1;
-		}
-		++$k;
-	}
-	echo "Return 1\n\n";
-	return 1;
+	print_r($s1);
+	echo "\n";
+	print_r($s2);
+	echo "\n";
 }
 
 function ft_split($str)
@@ -86,7 +37,7 @@ function ft_join($av)
 
 	foreach ($av as $element)
 	{
-		$joined .= " ".$element; /* Join all arguments in one str */
+		$joined .= " ".$element; 		/* Join all arguments in one str */
 	}
 	return $joined;
 }
@@ -107,8 +58,8 @@ $joined = ft_join($argv);
 $splitted = ft_split($joined);
 
 print_r($splitted);
-
-usort($splitted, "my_sort");
+if ($splitted)
+	usort($splitted, "my_sort");
 ft_print_array($splitted);
 
 ?>

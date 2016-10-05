@@ -27,5 +27,6 @@ function ft_main($ac, $av)
 	echo "$splitted[$i]\n";
 }
 
-ft_main($argc, $argv);
+if ($argc > 1)
+	ft_main($argc, $argv);
 ?>

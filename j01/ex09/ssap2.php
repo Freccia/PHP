@@ -1,25 +1,49 @@
 #!/usr/bin/php
-
 <?PHP
 
 function is_alpha($c)
 {
-	if ((ord($c) >= 65 && ord($c) <= 90) || (ord($c) >= 97 && ord($c) <= 122))
 		return true;
 	return false;
 
 }
 
-function my_sort($s1, $s2)
+function get_val($char)
 {
-	$s1 = strtolower($s1);
-	$s2 = strtolower($s2);
-	$s1 = str_split($s1);
-	$s2 = str_split($s2);
-	print_r($s1);
-	echo "\n";
-	print_r($s2);
-	echo "\n";
+	$char = strtolower($char);
+	$val = ord($char);
+	if ($val == 0)
+		return $val;
+	if (($val < 48) || ($val >= 91 && $val <= 96) || ($val >= 123))
+		$val += 1000;
+	else if (is_numeric($char))
+		$val += 100;
+	return $val;
+}
+
+function my_sort($str1, $str2)
+{
+	if ($str1 == $str2)
+		return 0;
+	$s1 = str_split($str1, 1);
+	$s2 = str_split($str2, 1);
+	$len1 = count($s1);
+	$len2 = count($s2);
+	$i = 0;
+
+	while ($i < $len1 && $i < $len2)
+	{
+		$val1 = get_val($s1[$i]);
+		$val2 = get_val($s2[$i]);
+		if ($val1 != $val2)
+			return ($val1 < $val2) ? -1 : 1;
+		++$i;
+	}
+	if ($i == $len1 && $i == $len2)
+		return 0;
+	if ($i == $len1)
+		return -1;
+	return 1;
 }
 
 function ft_split($str)
@@ -44,12 +68,9 @@ function ft_join($av)
 
 function ft_print_array($splitted)
 {
-	if ($splitted != NULL)
+	foreach ($splitted as $element)
 	{
-		foreach ($splitted as $element)
-		{
-			echo $element."\n";
-		}
+		echo $element."\n";
 	}
 }
 
@@ -57,9 +78,10 @@ unset($argv[0]);
 $joined = ft_join($argv);
 $splitted = ft_split($joined);
 
-print_r($splitted);
 if ($splitted)
+{
 	usort($splitted, "my_sort");
-ft_print_array($splitted);
+	ft_print_array($splitted);
+}
 
 ?>

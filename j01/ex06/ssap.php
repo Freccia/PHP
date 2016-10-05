@@ -1,7 +1,5 @@
 #!/usr/bin/php
-
 <?PHP
-
 function ft_split($str)
 {
 	if ($str == NULL)
@@ -38,5 +36,4 @@ unset($argv[0]);
 $joined = ft_join($argv);
 $splitted = ft_split($joined);
 ft_print_array($splitted);
-
 ?>

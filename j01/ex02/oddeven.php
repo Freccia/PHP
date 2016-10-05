@@ -1,7 +1,5 @@
 #!/usr/bin/php
-
 <?PHP
-
 $stdin = fopen("php://stdin", "r");
 
 while (1)
@@ -21,5 +19,4 @@ while (1)
 	else if ($n % 2 != 0)
 		echo "Le chiffre ".$n." est Impair\n";
 }
-
 ?>

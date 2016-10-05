@@ -1,10 +1,9 @@
+#!/usr/bin/php
 <?PHP
-
-function ft_is_sort($a)
+function ft_is_sort($array)
 {
-	$sorted = $a;
+	$sorted = $array;
 	sort($sorted);
-	return $a == $sorted;
+	return $array == $sorted;
 }
-
 ?>

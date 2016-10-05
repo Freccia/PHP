@@ -1,7 +1,5 @@
 #!/usr/bin/php
-
 <?PHP
-
 function epur_str($str)
 {
 	$epur = ltrim($str);
@@ -11,5 +9,4 @@ function epur_str($str)
 
 echo epur_str($argv[1]);
 echo "\n"
-
 ?>

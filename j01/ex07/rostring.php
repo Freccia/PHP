@@ -1,7 +1,5 @@
 #!/usr/bin/php
-
 <?PHP
-
 function ft_split($str)
 {
 	if ($str == NULL)
@@ -12,36 +10,22 @@ function ft_split($str)
 	return $sliced;
 }
 
-function ft_join($array)
-{
-	$i = -1;
-	$joined = NULL;
-	$ac = count($array);
-
-	if ($array == NULL)
-		return NULL;
-	while (++$i < $ac)
-	{
-		$joined .= $array[$i]." ";		/* Join all arguments in one str */
-	}
-	$joined = rtrim($joined);
-	return $joined;
-}
-
 function ft_main($ac, $av)
 {
 	if (($splitted = ft_split($av[1])) == NULL)
 		return NULL;
-	$last = count($splitted) - 1;		/* Get last element */
 	
-	$tmp = $splitted[0];				/* SWAP */
-	$splitted[0] = $splitted[$last];	/* SWAP */
-	$splitted[$last] = $tmp;			/* SWAP */
+	array_push($splitted, $splitted[0]);
+	unset($splitted[0]);
 
-	$joined = ft_join($splitted);		/* Join array entries in one str  */
-	echo $joined."\n";
+	$len = count($splitted);
+	$i = 0;
+	while (++$i < $len)
+	{
+		echo "$splitted[$i] ";
+	}
+	echo "$splitted[$i]\n";
 }
 
 ft_main($argc, $argv);
-
 ?>

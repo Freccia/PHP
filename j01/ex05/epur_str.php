@@ -4,6 +4,7 @@ function epur_str($str)
 {
 	$epur = ltrim($str);
 	$epur = rtrim($epur);
+	$epur = preg_replace("/\s\s+/", " ", $epur);
 	return ($epur);
 }
 

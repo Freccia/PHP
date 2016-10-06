@@ -4,7 +4,10 @@
 function ft_main($ac, $av)
 {
 	if ($ac != 4)
+	{
+		echo "Incorrect Parameters\n";
 		return 0;
+	}
 
 	$res = NULL;
 	$n1 = preg_replace("/\s+/", "", $av[1]);

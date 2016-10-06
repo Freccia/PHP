@@ -52,6 +52,8 @@ $imploded = preg_replace('/[Ss]amedi/', '6', $imploded);
 if ($before === $imploded)
 	    wrong_format();
 
+echo "IMPLODED: $imploded\n";
+
 $trying_to_parse = strptime($imploded, "%w %d %m %Y %H:%M:%S");
 if ($trying_to_parse === FALSE)
 	    wrong_format();

@@ -48,6 +48,13 @@ $time = preg_replace("/[Dd]ecembre/", "December", $time);
 if ($before == $time)
 	error();
 
+if (preg_match("/^[0-9]{1,2}/", $time) == 0)
+	error();
+if (preg_match("/ [0-9]{4} /", $time) == 0)
+	error();
+if (preg_match("/[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $time) == 0)
+	error();
+
 date_default_timezone_set("Europe/Paris");
 $time_str = strtotime($time);
 if (strlen($time_str) > 0)

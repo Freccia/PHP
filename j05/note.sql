@@ -13,7 +13,7 @@ UPDATE genre SET nom = 'test' WHERE id_genre = 29;
 SELECT * FROM genre;
 SELECT * FROM genre;
 SELECT count(*), id_genre FROM film GROUP BY id_genre; 
-SELECT * FROM film INNER JOIN genre ON film.id_genre = genre.id_genre WHERE id_genre = 25 ;
+SELECT * FROM film INNER JOIN genre ON film.id_genre = genre.id_genre WHERE film.id_genre = 25 ;
 SELECT * FROM 'table';
 SELECT champ FROM 'table;
 describe 'table; DESC

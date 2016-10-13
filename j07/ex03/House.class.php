@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors',1);
+error_reporting(E_ERROR);
+
 abstract class House {
 
 	abstract public function getHouseName();
@@ -8,7 +11,7 @@ abstract class House {
 
 	public function introduce() {
 		print ( "House " . $this->getHouseName());
-		print ( "of " . $this->getHouseSeat());
+		print ( " of " . $this->getHouseSeat());
 		print ( " : \"" . $this->getHouseMotto() . "\"" . PHP_EOL);
 	}
 

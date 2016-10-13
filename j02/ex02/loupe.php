@@ -14,8 +14,8 @@ function second_handler($matches)
 function first_handler($matches)
 {
 	var_dump($matches);
-	$matches[0] = preg_replace_callback("/( title=\")(.*?)(\")/mi", 'second_handler', $matches[0]);
-	$matches[0] = preg_replace_callback("/(>)(.*?)(<)/si", 'third_handler', $matches[0]);
+	$matches[0] = preg_replace_callback("/( title=\")(.*?)(\")/", 'second_handler', $matches[0]);
+	$matches[0] = preg_replace_callback("/(>)(.*?)(<)/", 'third_handler', $matches[0]);
 	return $matches[0];	
 }
 
